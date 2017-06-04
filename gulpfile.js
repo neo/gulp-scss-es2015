@@ -15,7 +15,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream());
 });
 
@@ -36,7 +36,7 @@ gulp.task('js', function() {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('.'))
+    .pipe(gulp.dest('dist'))
     .pipe(browserSync.stream({once: true}));
 });
 
